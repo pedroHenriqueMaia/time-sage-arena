@@ -1,0 +1,56 @@
+<mat-card class="admin-card">
+  <mat-card-header>
+    <mat-card-title>Administração do Jogo</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <div class="timer-controls">
+      <div class="timer-section">
+        <mat-form-field appearance="fill">
+          <mat-label>Tempo de Jogo</mat-label>
+          <input matInput convertToMinutes [(ngModel)]="gameTimeLeft" type="number" />
+        </mat-form-field>
+        <!-- <button mat-raised-button color="primary" (click)="startGameTimer()">Iniciar Tempo de Jogo</button>
+        <button mat-raised-button color="warn" (click)="pauseGameTimer()">Pausar Tempo de Jogo</button>
+        <button mat-raised-button color="accent" (click)="resetGameTimer()">Resetar Tempo de Jogo</button> -->
+      </div>
+      <div class="timer-section">
+        <mat-form-field appearance="fill">
+          <mat-label>Tempo de Ataque</mat-label>
+          <input matInput [(ngModel)]="attackTimeLeft" type="number" />
+        </mat-form-field>
+        <button mat-raised-button class="ml-1" color="primary" (click)="startAttackTimer()">Iniciar</button>
+        <button mat-raised-button class="ml-2" color="warn" (click)="pauseAttackTimer()">Pausar</button>
+        <button mat-raised-button class="ml-1" color="accent" (click)="resetAttackTimer()">Resetar</button>
+      </div>
+    </div>
+
+    <div class="score-controls">
+      <div class="score-section">
+        <mat-form-field appearance="fill">
+          <mat-label>Pontos Time A</mat-label>
+          <input matInput [(ngModel)]="teamAScore" type="number" />
+        </mat-form-field>
+        <button mat-raised-button color="primary" (click)="incrementScore('A', 2)">+2</button>
+        <button mat-raised-button color="warn" (click)="incrementScore('A', 3)">+3</button>
+      </div>
+
+      <div class="score-section">
+        <mat-form-field appearance="fill">
+          <mat-label>Pontos Time B</mat-label>
+          <input matInput [(ngModel)]="teamBScore" type="number" />
+        </mat-form-field>
+        <button mat-raised-button color="primary" (click)="incrementScore('B', 2)">+2</button>
+        <button mat-raised-button color="warn" (click)="incrementScore('B', 3)">+3</button>
+      </div>
+    </div>
+
+    <div class="quarter-controls">
+      <mat-form-field appearance="fill">
+        <mat-label>Quartil Atual</mat-label>
+        <input matInput [(ngModel)]="currentQuarter" type="number" readonly />
+      </mat-form-field>
+      <button mat-raised-button color="primary" (click)="changeQuarter(-1)">-1</button>
+      <button mat-raised-button color="primary" (click)="changeQuarter(1)">+1</button>
+    </div>
+  </mat-card-content>
+</mat-card>
