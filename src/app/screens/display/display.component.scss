@@ -1,7 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=DS+Digital&display=swap');
 
 .display-card {
-  max-width: 1200px;
+  max-width: 100vw;
+  max-height: 100vh;
   margin: 20px auto;
   padding: 20px;
   background-color: #f2f2f2; /* Fundo escuro para contraste */
@@ -21,7 +22,7 @@
 .time-display {
   font-family: 'DS Digital', monospace;
   font-size: 5em; /* Tamanho aumentado para melhor visibilidade */
-  color: #3f51b5; /* Cor do tema primário */
+  color: #333; /* Cor do tema primário */
   margin: 10px 0;
 }
 

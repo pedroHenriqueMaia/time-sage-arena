@@ -5,23 +5,24 @@
   <mat-card-content>
     <div class="game-info">
       <div class="time-section">
+        <h6>{{currentQuarter}} | 4</h6>
         <h1 class="time-display">{{ formatTime(gameTimeLeft) }}</h1>
-        <h2>Tempo de Jogo</h2>
+        <!-- <h2>Tempo de Jogo</h2> -->
       </div>
       <div class="time-section">
         <h1 class="time-display">{{ attackTimeLeft }}</h1>
-        <h2>Tempo de Ataque</h2>
+        <!-- <h2>Tempo de Ataque</h2> -->
       </div>
       <div class="score-section">
         <div class="team-info">
           <img class="team-logo" [src]="teamHome.logo" alt="Time A Logo" />
-          <h2>{{ teamAScore }}</h2>
-          <h3>{{ teamHome.name }}</h3>
+          <h1>{{ teamHome.points }}</h1>
+          <h2>{{ teamHome.name }}</h2>
         </div>
         <div class="team-info">
           <img class="team-logo" [src]="teamAway.logo" alt="Time B Logo" />
-          <h2>{{ teamBScore }}</h2>
-          <h3>{{ teamAway.name }}</h3>
+          <h1>{{ teamAway.points }}</h1>
+          <h2>{{ teamAway.name }}</h2>
         </div>
       </div>
       <div *ngIf="isInterval" class="interval-message">

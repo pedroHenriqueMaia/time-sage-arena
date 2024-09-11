@@ -10,15 +10,13 @@ import { ITeam } from 'src/app/models/ITeam';
 export class DisplayComponent implements OnInit {
   public gameTimeLeft: number = 600;
   public attackTimeLeft: number = 24;
-  public teamAScore: number = 0;
-  public teamBScore: number = 0;
   public currentQuarter: number = 1;
   public isInterval: boolean = false;
+  public teamAway!: ITeam;
+  public teamHome!: ITeam;
 
   private gameTimerInterval: any;
   private attackTimerInterval: any;
-  teamAway!: ITeam;
-  teamHome!: ITeam;
 
 
   constructor(private gameService: GameService) { }
@@ -62,10 +60,11 @@ export class DisplayComponent implements OnInit {
             break;
           case 'UPDATE_SCORE':
             if (msg.team === 'A') {
-              this.teamAScore = msg.score;
+              this.teamHome.points += msg.points;
             } else if (msg.team === 'B') {
-              this.teamBScore = msg.score;
+              this.teamAway.points += msg.points;
             }
+            console.log(this.teamAway, this.teamHome, msg)
             break;
           case 'UPDATE_QUARTER':
             this.currentQuarter = msg.quarter;

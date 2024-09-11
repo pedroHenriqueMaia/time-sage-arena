@@ -14,6 +14,8 @@ import { DisplayComponent } from './screens/display/display.component';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { ConvertToMinutesDirective } from './directives/convert-to-minutes.directive';
+import { MatIconModule } from '@angular/material/icon';
+
 
 @NgModule({
   declarations: [
@@ -32,7 +34,8 @@ import { ConvertToMinutesDirective } from './directives/convert-to-minutes.direc
     MatButtonModule,
     MatCardModule,
     MatInputModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatIconModule
 
   ],
   providers: [],

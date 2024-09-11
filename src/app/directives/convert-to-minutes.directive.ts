@@ -1,29 +1,24 @@
-import { Directive, ElementRef, HostListener, Input } from '@angular/core';
+import { Directive, HostListener, ElementRef } from '@angular/core';
 import { NgModel } from '@angular/forms';
 
 @Directive({
-  selector: '[convertToMinutes]'
+  selector: '[convertToMinutes]',
+  providers: [NgModel]
 })
 export class ConvertToMinutesDirective {
 
-  constructor(private el: ElementRef, private ngModel: NgModel) { }
+  constructor(private el: ElementRef, private model: NgModel) { }
 
-  @HostListener('blur') onBlur() {
-    let value = this.el.nativeElement.value;
-    const minutes = Math.floor(value / 60);
-    const seconds = value % 60;
-    this.ngModel.viewModel = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
-    this.ngModel.update.emit(this.ngModel.viewModel);
+  @HostListener('input', ['$event.target.value'])
+  onInputChange(value: string) {
+    const minutes = Math.floor(Number(value) / 60);
+    const seconds = Number(value) % 60;
+    this.model.viewModel = `${minutes}:${seconds.toString().padStart(2, '0')}`;
   }
 
-  @HostListener('focus') onFocus() {
-    let value = this.ngModel.viewModel;
-    if (typeof value === 'string') {
-      const parts = value.split(':');
-      const minutes = parseInt(parts[0], 10);
-      const seconds = parseInt(parts[1], 10);
-      const totalSeconds = (minutes * 60) + seconds;
-      this.el.nativeElement.value = totalSeconds;
-    }
+  @HostListener('blur', ['$event.target.value'])
+  onBlur(value: string) {
+    const [minutes, seconds] = value.split(':').map(Number);
+    this.model.viewModel = (minutes * 60 + seconds).toString();
   }
 }

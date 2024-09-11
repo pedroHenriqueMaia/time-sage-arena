@@ -1,20 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=DS+Digital&display=swap');
+
 .admin-card {
   max-width: 800px;
-  margin: 20px auto;
-  padding: 20px;
+  margin: 0 auto;
+  padding: 1rem;
 }
 
-.timer-controls, .score-controls, .quarter-controls {
+.timer-controls {
+  margin-top: 5rem;
   display: flex;
   justify-content: space-between;
-  margin-bottom: 20px;
+  align-items: center;
+
+  .timer-section {
+    flex: 1;
+    margin: 0 0.5rem;
+    text-align: center;
+  font-family: 'DS Digital', monospace;
+
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    mat-form-field {
+      width: 100%;
+    }
+
+    p {
+      font-size: 1.2rem;
+      font-weight: bold;
+      margin: 0;
+    }
+  }
 }
 
-.timer-section, .score-section {
-  flex: 1;
-  margin: 0 10px;
+.attack-buttons {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+
+  button {
+    margin: 0 0.5rem;
+  }
+
+  mat-icon {
+    font-size: 24px;
+  }
 }
 
-mat-form-field {
-  width: 100%;
+.score-controls, .quarter-controls {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 1rem;
+
+  .team-score {
+    text-align: center;
+
+    p {
+      font-size: 1.2rem;
+      font-weight: bold;
+      margin: 0;
+    }
+
+    .score-buttons {
+      display: flex;
+      justify-content: center;
+      margin-top: 0.5rem;
+
+      button {
+        margin: 0 0.5rem;
+      }
+    }
+  }
 }
+
+.quarter-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  p {
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+}
+
+* button {
+  background-color: #333; // Preto
+  color: #fff;
+  transition: background-color 0.3s ease; // Adicionando transição suave
+
+  &:hover {
+    background-color: #4caf50; // Verde
+  }
+}
+
+button.mat-warn {
+  background-color: #f44336; // Vermelho
+  transition: background-color 0.3s ease; // Adicionando transição suave
+
+  &:hover {
+    background-color: #d32f2f; // Vermelho mais escuro
+  }
+}
+
+
+.team-logo {
+  width: 150px; /* Aumenta o tamanho do logo */
+  height: 150px; /* Mantém a proporção do logo */
+  display: block;
+  margin: 0 auto 10px auto; /* Posiciona o logo um pouco mais para cima */
+  border-radius: 50%; /* Borda arredondada para o logo */
+  object-fit: cover; /* Mantém a proporção do logo dentro da área */
+}
+
