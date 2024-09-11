@@ -1,27 +1,36 @@
-# TimeSageArena
+# Time Sage Arena
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.2.
+## Passos Iniciais
 
-## Development server
+### Clonar o repositório
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+```bash
+git clone https://github.com/pedroHenriqueMaia/time-sage-arena.git
+cd time-sage-arena
+```
 
-## Code scaffolding
+### Instalar Dependências
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Certifique-se de ter o Node.js (versão 16.0 ou superior) instalado na sua máquina. Depois, execute:
 
-## Build
+```bash
+npm install
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### Executar projeto localmente
 
-## Running unit tests
+Subir projeto Angular
+```bash
+npm start
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Subir server com WebSocket
+```bash
+cd server/
+npm start
+```
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+### Telas do projeto
+![tela2](./src/assets/2.png)
+![tela3](./src/assets/3.png)
+![tela1](./src/assets/1.png)
